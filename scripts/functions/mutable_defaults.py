@@ -1,3 +1,4 @@
+# default value is the same object for all the calls.
 def f(a=[]):
     try:
         x = a[-1]
