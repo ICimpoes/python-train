@@ -10,3 +10,10 @@ print(reduce((lambda x, y: x*y), ['HI_ªª', 2, 3, 4]))
 print(reduce((lambda x, y: x*y), [1]))
 
 # print(reduce((lambda x, y: x*y), []))
+
+M = map(lambda x: 2 ** x, range(3))
+
+for i in M:
+    print(i)
+for i in M:
+    print(i)

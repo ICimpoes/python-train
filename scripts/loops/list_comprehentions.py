@@ -1,40 +1,26 @@
 
-def f():
-    return open('../../resources/test.file')
-
 lines = [line.rstrip().upper()
-         for line in f()
+         for line in open('../../resources/test.file')
          for x in ['1', '2', 'a', 'b', 'g']
          if x in line]
 
 print(lines)
 
-a, *b, c = f()
+M = [[1, 2, 3],
+     [4, 5, 6],
+     [7, 8, 9]]
 
-print(a.rstrip(), b, c)
+for x in [[col * 2 for col in row] for row in M]:
+    print(x)
 
-print('a\n' in f())
-print('a2\n' in f())
+print([M[i][i] for i in range(len(M))])
 
+print([M[i][len(M) - i - 1] for i in range(len(M))])
 
-X = (1, 2, 'a')
-Y = (3, 4, 'b')
-Z = (5, 6, 'c')
+print([M[i][k] * M[k][j] for i in range(3)
+       for j in range(3)
+       for k in range(3)])
 
-print(list(zip(X, Y, Z)))
-
-
-A, B, C = zip(*zip(X, Y, Z))
-
-print(A, B, C)
-
-
-print(*[1, 2, 3, 4, 5], sep=' - ')
-
-
-M = map(lambda x: 2 ** x, range(3))
-
-for i in M:
-    print(i)
-for i in M:
-    print(i)
+print([sum(x) for x in [[M[i][k] * M[k][j] for k in range(3)]
+       for i in range(3)
+       for j in range(3)]])
